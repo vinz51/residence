@@ -1,0 +1,6 @@
+
+@mixin columns($params) {
+    -webkit-columns : $params;
+       -moz-columns : $params;
+            columns : $params;
+}

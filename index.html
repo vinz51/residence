@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1, maximum-scale=1">
+        <title>BAP</title>
+        <link rel="stylesheet" href="./css/generic.core.css">
+    </head>
+    <body>
+        
+        <header id="header">
+            <h1> RÉSIDENCE </h1>
+        </header>
+        
+        <main id="main">
+            <div class="totals">
+                <ul>
+                    <li class="totals-building">
+                        <h3>IMMEUBLES</h3>
+                        <div class="icon"></div>
+                        <span class="total"></span>
+                    </li>
+                    <li class="totals-apartment">
+                        <h3>APPARTEMENTS</h3>
+                        <div class="icon"></div>
+                        <span class="total"></span>
+                    </li>
+                    <li class="totals-water" onclick="consumeAllWater(event)">
+                        <h3>TOTAL</h3>
+                        <div class="icon"></div>
+                        <span class="total"></span>
+                    </li>
+                </ul>
+            </div>
+            <div id="residence"></div>
+        </main>
+        
+        <footer id="footer">
+            <p>Created by Vincent Benoit - 2018 - <a href="https://vincentbenoit.com" target="_blank"> website </a> </p>
+        </footer>
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.24.0/babel.js"></script>
+        <script type="text/javascript" src="./residence.js"></script>
+    </body>
+</html>

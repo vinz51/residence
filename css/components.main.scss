@@ -1,0 +1,188 @@
+@import "./tools.grid.scss";
+@import "./settings.colors.scss";
+@import "./tools.animation.scss";
+
+#main {
+    margin-top: 50px;
+    padding: 10px;
+}
+
+.totals ul {
+    @include columns(3);
+}
+
+.totals ul li {
+    text-align: center;
+    background-color: $white;
+    overflow: hidden;
+    padding: 10px 0;
+    border-bottom-style: solid;
+    border-bottom-width: 2px;
+    
+    .icon {
+        height: 50px;
+        background-position: center;
+        background-repeat: no-repeat;
+        margin: 10px 0;
+    }
+    .total {
+        font-weight: bold;
+        display: block;
+        padding-top: 10px;
+    }
+}
+
+.totals-building {
+    .icon {
+        background-image: url(../img/building.svg);
+    }
+    border-bottom-color: $peach;
+    &:hover {
+        background-color: $lightorange;
+    }
+    .total {
+        color: $peach;
+    }
+}
+
+.totals-apartment {
+    .icon {
+        background-image: url(../img/building2.svg);
+    }
+    border-bottom-color: $purple;
+    &:hover {
+        background-color: $lightpurple;
+    }
+    .total {
+        color: $purple;
+    }
+}
+
+.totals-water {
+    .icon {
+        background-image: url(../img/drop.svg);
+        background-position-y: -50px;
+    }
+    
+    border-bottom-color: $blue;
+    &:hover {
+        background-color: $lightblue;
+    }
+    
+    &.active .icon {
+        @include animate-element(animateElement 1s ease-in-out infinite);
+    }
+    
+    .total {
+        color: $blue;
+    }
+}
+
+@include keyframes(animateElement) {
+    0% {@include transform-element(scale(1))}
+    50% {@include transform-element(scale(.5))}
+    100% {@include transform-element(scale(1))}
+}
+
+#residence {
+    margin-top: 25px;
+}
+
+.building {
+    margin-bottom: 20px
+}
+
+.building-header {
+    text-align: center;
+    background-color: $orange;
+    color: $darkgrey;
+    font-weight: bold;
+    border-radius: 5px;
+    padding: 8px;
+}
+
+.building-body {
+    background-color: $yellow;
+    margin: 0 10px;
+    padding: 10px;
+    text-align: center;
+}
+
+.building-footer {
+    text-align: center;
+    background-color: $purple;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    padding: 10px;
+    color: $white;
+}
+
+.sanitaries {
+    &.s_1 {
+        @include columns(1);
+    }
+    &.s_2 {
+        @include columns(2);
+    }
+    &.s_3 {
+        @include columns(3);
+    }
+    &.s_4 {
+        @include columns(4);
+    }
+}
+
+.sanitary {
+    min-height: 70px;
+    text-align: center;
+    padding-top: 5px;
+    cursor: pointer;
+    
+    &:hover {
+        background-color: $lightgrey;
+    }
+}
+
+.sanitary-img {
+    height: 50px;
+    background-size: 100% 80%;
+    background-repeat: no-repeat;
+}
+
+.drop {
+    background-image: url('../img/drop.svg')
+}
+
+.sink {
+    background-image: url('../img/sink.svg')
+}
+
+.bathtub {
+    background-image: url('../img/bathtub.svg')
+}
+
+.shower {
+    background-image: url('../img/shower.svg')
+}
+
+.jacuzzi {
+    background-image: url('../img/jacuzzi.svg')
+}
+
+.apartment {
+    background-color: $white;
+    margin: 10px 0;
+    padding: 10px;
+}
+
+@media screen and (min-width:960px) {
+    #main {
+        margin: 70px auto;
+        width: 960px;
+    }
+    
+    #residence {
+        @include columns(2)
+    }
+    
+}
